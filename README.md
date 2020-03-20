@@ -6,7 +6,7 @@
 
 [**X**] Section 1: **Introduction**
 
-[ ] Section 2: **NgRx key concepts - actions and reducers**
+[**X**] Section 2: **NgRx key concepts - actions and reducers**
 
 [ ] Section 3: **NgRx key concepts - selectors and effects**
 
