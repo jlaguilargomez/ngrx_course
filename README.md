@@ -2,6 +2,9 @@
 
 [Udemy course](https://indra.udemy.com/course/ngrx-course/)
 
+- Lanzamos servidor: `npm run server`
+- Lanzamos angular: `npm start`
+
 ## Content
 
 [**X**] Section 1: **Introduction**
