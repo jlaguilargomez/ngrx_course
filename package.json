@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "nghm": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy.json"
   },
   "private": true,
   "dependencies": {

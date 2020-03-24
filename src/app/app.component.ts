@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, distinctUntilChanged } from 'rxjs/operators';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -10,6 +10,7 @@ import {
   Router,
 } from '@angular/router';
 import { AuthState } from './auth/reducers';
+import { isLoggedIn, isLoggedOut } from './auth/auth.selectors';
 
 @Component({
   selector: 'app-root',
@@ -50,9 +51,12 @@ export class AppComponent implements OnInit {
     });
 
     // probamos si funcionan los observables "isLoggedIn" y "isLoggedOut"
-    this.isLoggedIn$ = this.store.pipe(map(state => !!state['auth'].user));
+    this.isLoggedIn$ = this.store.pipe(
+      // vamos a optimizar la aplicación, haremos que no cambie para cada valor emitido del STATE si este no ha variado
+      select(isLoggedIn)
+    );
 
-    this.isLoggedOut$ = this.store.pipe(map(state => !state['auth'].user));
+    this.isLoggedOut$ = this.store.pipe(select(isLoggedOut));
   }
 
   logout() {}
