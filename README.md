@@ -13,7 +13,7 @@
 
 [**X**] Section 3: **NgRx key concepts - selectors and effects**
 
-[ ] Section 4: **NgRx development tools in depth**
+[**X**] Section 4: **NgRx development tools in depth**
 
 [ ] Section 5: **NgRx entity in depth**
 
